@@ -25,7 +25,7 @@ export class WeatherWidgetComponent implements OnInit {
   submitForm() {
     const city = this.loginForm.get('city')?.value;
     if (city) {
-      this.loading = true; // Show loading spinner
+      this.loading = true; 
       const apiKey = '2bacea3e1c7305e30b11c9d0c41a9100';
       const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
 
@@ -36,22 +36,19 @@ export class WeatherWidgetComponent implements OnInit {
         this.palace = data.name
         this.wind = data.wind.speed
         this.humidity = data.main.humidity;
-        // Determine if it's day or night based on the current time and sunset/sunrise times
         const sunrise = new Date(data.sys.sunrise * 1000);
         const sunset = new Date(data.sys.sunset * 1000);
         const now = new Date();
 
         this.isDay = now > sunrise && now < sunset;
-        this.loading = false; // Hide loading spinner
+        this.loading = false; 
       }, error => {
         console.error('Error fetching weather data:', error);
-        this.loading = false; // Hide loading spinner in case of error
+        this.loading = false; 
       });
     }
   }
 
   ngOnInit(): void {
-    // Fetch initial weather data for a default city if needed
-    // You can put the default city name here and call this.submitForm() if you want to fetch weather data on component initialization
   }
 }

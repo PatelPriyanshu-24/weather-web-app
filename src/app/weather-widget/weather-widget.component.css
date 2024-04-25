@@ -15,8 +15,9 @@
 }
 
 .btn-primary {
-    background-color: #007bff;
-    border-color: #007bff;
+    background-color: #00bfff;
+    width: 7rem;
+    border-color: #bedaf7;
     height: 3.4rem;
     transition: all 0.3s ease; /* Smooth transition effect */
 }
@@ -83,3 +84,4 @@
         transform: scale(1);
     }
 }
+
